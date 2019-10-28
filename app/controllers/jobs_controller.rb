@@ -39,7 +39,7 @@ class JobsController < ApplicationController
     card_last4 = params[:user][:card_last4]
 
     charge = Stripe::Charge.create(
-      :amount => 30000,
+      :amount => 100,
       :currency => "usd",
       :description => job_type,
       :statement_descriptor => job_title,
