@@ -23,20 +23,34 @@
   font-size: 9px !important;
 }
 .appLogo {
-  margin-top:10px;
+  max-width:75%;
 }
 
 .bg-light {
-  background-color:#1c2838;
+  background-color:#00adee;
 }
 
 .footer {
-  background-color:#1c2838;
+  background-color:#00adee;
 }
 
 .navbar-item .button {
   background-color:#f2b41c;
   border-style:none;
-  color:#1c2838;
+  color:#fff;
   font-weight:bold;
+}
+
+.contractButton {
+  background-color:#ed8c00 !important;
+  border-style:none;
+  color:#fff;
+}
+
+/*----Mobile Styling ----*/
+@media only screen and (max-width: 900px) {
+  .appLogo {
+ width:25% !important;
+ margin-top:10px !important;
+}
 }
