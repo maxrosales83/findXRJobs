@@ -31,11 +31,11 @@
 }
 
 .footer {
-  background-color:#00adee;
+  background-color:#474747;
 }
 
 .navbar-item .button {
-  background-color:#f2b41c;
+  background-color:#00adee;
   border-style:none;
   color:#fff;
   font-weight:bold;
@@ -47,6 +47,14 @@
   color:#fff;
 }
 
+.homepageBanner {
+  
+  background-image: url("http://xrloaded-com.stackstaging.com/images/bannerHero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color:#474747;
+}
 /*----Mobile Styling ----*/
 @media only screen and (max-width: 900px) {
   .appLogo {
@@ -54,3 +62,4 @@
  margin-top:10px !important;
 }
 }
+
