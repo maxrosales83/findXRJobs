@@ -55,6 +55,11 @@
   background-size: cover;
   background-color:#474747;
 }
+
+/*--MailChim Pop UP Banner ---*/
+.content__monkeyRewards a {
+  display:none;
+}
 /*----Mobile Styling ----*/
 @media only screen and (max-width: 900px) {
   .appLogo {
