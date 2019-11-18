@@ -63,6 +63,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'stripe', '~> 3.11'
 gem 'trix', '~> 0.11.1'
 gem "figaro"
+gem 'fog-aws'
 
 
 group :development, :test do
