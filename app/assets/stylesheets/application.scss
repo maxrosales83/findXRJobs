@@ -66,9 +66,21 @@
  width:25% !important;
  margin-top:10px !important;
 }
+
 }
 @media only screen and (max-width: 768px) {
 #leftsideButtonsColumn {
   margin-right:0;
+}
+}
+@media only screen and (max-width: 768px) {
+  #noShowOnMobile {
+ display:none !important;
+}
+}
+
+@media only screen and (min-width: 768px) {
+ #ShowOnMobile {
+ display:none !important;
 }
 }
