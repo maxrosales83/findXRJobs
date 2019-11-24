@@ -64,7 +64,8 @@ gem 'stripe', '~> 3.11'
 gem 'trix', '~> 0.11.1'
 gem "figaro"
 gem 'fog-aws'
-
+gem 'bloggy'
+gem 'yajl-ruby'
 
 group :development, :test do
   gem 'sqlite3'

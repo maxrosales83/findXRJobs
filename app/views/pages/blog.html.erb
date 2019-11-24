@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= Rails.configuration.application_name %></title>
+    <%= csrf_meta_tags %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= tag :meta, name: "stripe-public-key", content: Figaro.env.stripe_publishable_key %>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121634710-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-121634710-4');
+  </script>
+  </head>
+
+  <body class="<%= yield (:body_class) %>">
+    <% if flash[:notice] %>
+      <div class="notification is-success global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+    <div class="notification is-danger global-notification">
+      <p class="alert"><%= alert %></p>
+    </div>
+    <% end %>
+
+     <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <%= link_to root_path, class:"navbar-item" do %>
+          <%= link_to image_tag("XR-Loaded-Logo.png", alt: "logo"), '/', class: 'mt1 appLogo' %>
+         
+        <% end  %>
+         <img scr="/rails_project/job_board/app/assets/images/XR-Loaded-Logo.png"/>
+        <div class="navbar-burger burger" data-target="navbar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navbar" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+            <p class="control">
+              <%= link_to 'Post Job', new_job_path, class: "navbar-item button is-rounded" %>
+            </p>
+            <% if user_signed_in? %>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
+                <div class="navbar-dropdown is-right">
+                  <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
+                  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %>
+                </div>
+              </div>
+            <% else %>
+            <p class="control">
+              <%= link_to "Sign In", new_user_session_path, class:"navbar-item signUpSignInButton" %>
+            </p>
+            <p class="control">
+              <%= link_to "Sign up", new_user_registration_path, class:"navbar-item signUpSignInButton"%>
+            </p>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+<body>
+    
+    <!-- Blog section -->
+   <section class="hero is-info is-small">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title">
+            XR Loaded Blog
+          </p>
+          <p class="subtitle">
+            We keep up with what's going on in the XR world.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="container" style="margin-top:20px;margin-bottom:40px;">
+      <div class="columns features">
+          
+        <!-- Blog post card --> 
+        <div class="column is-4">
+          <div class="card is-shady">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/w830/public/field/image/2019/11/verizon-ap.jpeg?itok=CQiSgSkB" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4>Verizon and Snap Inc. partner for exclusive 5G powered AR experiences</h4>
+                <p>Verizon has partnered with Snap Inc. to spotlight the advantages of a 5G network. Verizon will preload the Snapchat app and exclusive AR filters on select 5G phones.Snapchat will launch exclusive 5G powered AR filters during the NFL's Super Bowl LIV.</p>
+                <span class="button is-link modal-button" style="background-color:#209cee;"data-target="modal-card">Read More</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Blog post card -->
+        <!-- Blog post card --> 
+        <div class="column is-4">
+          <div class="card is-shady">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://techadmirers.com/wp-content/uploads/2019/11/Chart-13-33.jpeg" alt="Graph image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4>Intelligent Vehicle AR/VR Market to See Major Growth by 2025 key players Samsung Gear VR, IMAX, Vuzix Corporation</h4>
+                <p>A comprehensive Study accomplished by HTF MI, on both global and regional sales of Global Intelligent Vehicle AR/VR Market which provides a ...</p>
+                <span class="button is-link modal-button" style="background-color:#209cee;"data-target="modal-card2">Read More</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Blog post card -->
+        
+      </div>
+      
+      <!--<div class="columns features"> -->
+         <!-- Blog post card --> 
+      <!--  <div class="column is-4">
+          <div class="card is-shady">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4>Tempor orci dapibus ultrices in.</h4>
+                <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum lorem
+                sed risus.</p>
+                <span class="button is-link modal-button" data-target="modal-card">Modal Card</span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- End Blog post card --> 
+        <!-- Blog post card --> 
+      <!--  <div class="column is-4">
+          <div class="card is-shady">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4>Tempor orci dapibus ultrices in.</h4>
+                <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum lorem
+                sed risus.</p>
+                <span class="button is-link modal-button" data-target="modal-card">Modal Card</span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- End Blog post card -->
+        <!-- Blog post card --> 
+      <!--  <div class="column is-4">
+          <div class="card is-shady">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4>Tempor orci dapibus ultrices in.</h4>
+                <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum lorem
+                sed risus.</p>
+                <span class="button is-link modal-button" data-target="modal-card">Modal Card</span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- End Blog post card --> 
+        
+      </div>
+    </section>
+      
+      
+        <!--  ===============
+    HERE BE MODALS
+    ===============  -->
+    <!-- 3dFlipVertical card tiny -->
+    <div id="modal-card" class="modal modal-fx-3dSlit">
+      <div class="modal-background"></div>
+      <div class="modal-content is-tiny">
+        <!-- content -->
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/w830/public/field/image/2019/11/verizon-ap.jpeg?itok=CQiSgSkB" alt="Verizon image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="https://xrloadedstorage.s3.amazonaws.com/Max.png" alt="Max Rosales avatar">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Max Rosales</p>
+              </div>
+            </div>
+            <div class="content">
+              Verizon has announced a partnership with Snap Inc, the parent company that owns the popular social media app, Snapchat, to show the advantages of Verizon's 5G Ultra Wideband network through exclusive augmented reality (AR) experiences.
+
+            The two companies will explore 5G possibilities by working on marketing campaigns with exclusive distribution through each other. For example, Verizon will preload the Snapchat app, along with exclusive AR features, on select 5G Verizon phones, and Verizon would be the principal sponsor for Snap Originals.
+    
+            In an official press release, Snap chief strategy officer Jared Grusd said, "We are thrilled to partner with Verizon to move the industry forward through the development of creative and innovative 5G experiences on Snapchat."
+              <a href="https://www.windowscentral.com/verizon-and-snap-inc-partner-exclusive-5g-powered-ar-experiences">Read Original Story Here</a>
+              
+            </div>
+          </div>
+        </div>
+        <!-- end content -->
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <!-- end tiny modal card -->
+    
+     <!-- 3dFlipVertical card tiny -->
+    <div id="modal-card2" class="modal modal-fx-3dSlit">
+      <div class="modal-background"></div>
+      <div class="modal-content is-tiny">
+        <!-- content -->
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://techadmirers.com/wp-content/uploads/2019/11/Chart-13-33.jpeg" alt="Graph image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="https://xrloadedstorage.s3.amazonaws.com/Max.png" alt="Max Rosales avatar">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Max Rosales</p>
+              </div>
+            </div>
+            <div class="content">
+
+                A comprehensive Study accomplished by HTF MI, on both global and regional sales of Global Intelligent Vehicle AR/VR Market which provides a better understanding of the present market Size, landscape, Development, status and Growth Opportunities during 2019 to 2025. The study is a mix of qualitative and quantitative Market data collected and validated majorly through primary data and secondary sources. The market Study is segmented by key regions which is accelerating the marketization. At present, the market is developing its presence and some of the Global Intelligent Vehicle AR/VR Market key players Involved in the study are Apple, Huawei, Facebook, HTC, Microsoft, Google, Samsung Gear VR, IMAX, Vuzix Corporation, EON Reality, Inc, Blippar Inc, Daqri LLC, Osterhout Design Group (ODG), Meta Company & Oculus.
+              <a href="https://techadmirers.com/2019/11/23/intelligent-vehicle-ar-vr-market-to-see-major-growth-by-2025-key-players-samsung-gear-vr-imax-vuzix-corporation/">Read Original Story Here</a>
+              
+            </div>
+          </div>
+        </div>
+        <!-- end content -->
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <!-- end tiny modal card -->
+  
+    
+
+
+    <footer class="footer">
+        <div class="container">
+        <%= link_to root_path do %>
+              <%= link_to image_tag("XR-Loaded-white.png", alt: "logo"), '/', class: 'appLogo' %>
+        <% end  %>
+           <div id="footerImage">
+            <%= image_tag 'https://xrloadedstorage.s3.amazonaws.com/weird-science-stars-anthony-michael-hall-kelly-le-brock-reveal-how-they-truly-feel-about-planned-reboot-post-2.jpg' %>
+           </div>
+           <p class="footerText" style="color:#fff;">
+                We're live and making adjustments as we go.</br> <a href="mailto:contact@xrloaded.com">Please let us know if you have any suggestions!</a>
+             </p>
+        
+        <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us5.list-manage.com","uuid":"3054d90505d455689009ddaac","lid":"4e4a9edef7","uniqueMethods":true}) })</script>
+        
+        </div>
+    </footer>
+    <%= javascript_include_tag 'application', "https://js.stripe.com/v2/", "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>  
+    <script src="../js/wild.js"></script>
+    </body>
+</html>
