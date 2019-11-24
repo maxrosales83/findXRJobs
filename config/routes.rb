@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/info' => 'pages#info'
   get '/blog' => 'pages#blog'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    
 end

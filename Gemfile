@@ -66,6 +66,7 @@ gem "figaro"
 gem 'fog-aws'
 gem 'bloggy'
 gem 'yajl-ruby'
+gem 'exception_handler', '~> 0.8.0.0'
 
 group :development, :test do
   gem 'sqlite3'

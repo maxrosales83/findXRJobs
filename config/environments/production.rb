@@ -84,6 +84,8 @@ Rails.application.configure do
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
+    # Route exceptions to the application router vs. default
+    config.exceptions_app = self.routes
   end
 
   # Do not dump schema after migrations.
