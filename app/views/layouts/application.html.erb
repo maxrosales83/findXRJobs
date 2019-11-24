@@ -10,6 +10,7 @@
 
     <%= tag :meta, name: "stripe-public-key", content: Figaro.env.stripe_publishable_key %>
     <meta name="google-site-verification" content="cGEoN9S2O8-pmqrCDW1S_2VkfO6o5fMm0En-UEqPKs4" />
+    <%= favicon_link_tag asset_path('XR-fav.png') %>
   </head>
 
   <body class="<%= yield (:body_class) %>">
@@ -86,7 +87,7 @@
     </section>
 <div class="box cta">
       <p class="has-text-centered">
-        <span class="tag is-primary">New</span> Our <a href="/blog">Blog</a> is live!
+        <span class="tag is-primary">New</span> Our <a href="s/blog">Blog</a> is live!
     </div>
   <%= yield %>
 
