@@ -83,11 +83,12 @@
 </body>
 
   <footer class="footer">
-    <div class="container">
+    <div class="container" >
     <%= link_to root_path do %>
           <%= link_to image_tag("XR-Loaded-white.png", alt: "logo"), '/', class: 'appLogo' %>
     <% end  %>
     </div>
+   
   </footer>
     <%= javascript_include_tag 'application', "https://js.stripe.com/v2/", "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
 
