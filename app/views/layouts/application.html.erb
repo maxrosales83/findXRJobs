@@ -10,7 +10,7 @@
     <!-- End Google Tag Manager -->
     <title><%= Rails.configuration.application_name %></title>
     <%= csrf_meta_tags %>
-
+   
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -18,7 +18,32 @@
     <%= tag :meta, name: "stripe-public-key", content: Figaro.env.stripe_publishable_key %>
     <meta name="google-site-verification" content="cGEoN9S2O8-pmqrCDW1S_2VkfO6o5fMm0En-UEqPKs4" />
     <%= favicon_link_tag asset_path('') %>
-    <meta property="og:image" content="https://xrloadedstorage.s3.amazonaws.com/bannerHero.jpg" />
+    <meta name="description" content="Jobs available: Work in Augmented Reality, Mixed Reality, and Virtual Reality. A job board for AR/VR/MR/XR designers, programmers, and more! Hire AR/VR/MR/XR talent ranging from developers to designers and more. XR Loaded makes it easy to find talent in the virtual reality, aguemented reality, and mixed reality field. As well as helping talent find a career. XR Loaded is the web's number 1 job board for ar/vr/mx/ and xr jobs" />
+    <meta property="og:title" content="Jobs in Augmented Reality, Mixed Reality, and Virtual Reality." />
+    <meta property="og:url" content="https://xrloaded.com/" />
+    <meta property="og:site_name" content="XR Loaded" />
+    <meta property="og:description" content="Jobs available: Work in Augmented Reality, Mixed Reality, and Virtual Reality. A job board for AR/VR/MR/XR designers, programmers, and more! Hire AR/VR/MR/XR talent ranging from developers to designers and more. XR Loaded makes it easy to find talent in the virtual reality, aguemented reality, and mixed reality field. As well as helping talent find a career. XR Loaded is the web's number 1 job board for ar/vr/mx/ and xr jobs" />
+    <meta property="og:image" content="https://xrloadedstorage.s3.amazonaws.com/OG-Work.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:updated_time" content="2019-11-25T07:09:10-07:00" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@LoadedXr">
+    <meta name="twitter:creator" content="@LoadedXr">
+    <meta name="twitter:title" content="Work in Augmented Reality, Mixed Reality, and Virtual Reality.">
+    <meta name="twitter:description" content="Jobs available: Work in Augmented Reality, Mixed Reality, and Virtual Reality. A job board for AR/VR/MR/XR designers, programmers, and more! Hire AR/VR/MR/XR talent ranging from developers to designers and more. XR Loaded makes it easy to find talent in the virtual reality, aguemented reality, and mixed reality field. As well as helping talent find a career. XR Loaded is the web's number 1 job board for ar/vr/mx/ and xr jobs">
+    <meta name="twitter:image:src" content="https://xrloadedstorage.s3.amazonaws.com/OGPic.jpg">
+    <meta name="twitter:url" content="https://xrloaded.com//">
+    <link rel="image_src" href="https://xrloadedstorage.s3.amazonaws.com/OGPic.jpg" />
+    <link rel="icon" href="https://xrloadedstorage.s3.amazonaws.com/Icon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="https://xrloadedstorage.s3.amazonaws.com/Icon--57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://xrloadedstorage.s3.amazonaws.com/Icon--60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://xrloadedstorage.s3.amazonaws.com/Icon--72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://xrloadedstorage.s3.amazonaws.com/Icon--76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://xrloadedstorage.s3.amazonaws.com/Icon--114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://xrloadedstorage.s3.amazonaws.com/Icon--120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://xrloadedstorage.s3.amazonaws.com/Icon--144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://xrloadedstorage.s3.amazonaws.com/Icon--152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://xrloadedstorage.s3.amazonaws.com/Icon--180x180.png">
   </head>
 
   <body class="<%= yield (:body_class) %>">
