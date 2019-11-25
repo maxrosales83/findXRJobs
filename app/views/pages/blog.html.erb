@@ -5,20 +5,21 @@
     <%= csrf_meta_tags %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="XR Loaded Blog on the Augmented Reality, Mixed Reality, and Virtual Reality job market." />
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= tag :meta, name: "stripe-public-key", content: Figaro.env.stripe_publishable_key %>
     
     <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121634710-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'UA-121634710-4');
-  </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121634710-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-121634710-4');
+    </script>
   </head>
 
   <body class="<%= yield (:body_class) %>">
