@@ -63,7 +63,7 @@ class JobsController < ApplicationController
       end
     end
 
-    rescue Stripe::CardError => e
+  rescue Stripe::CardError => e
       flash.alert = e.message
       render action: :new
   end
