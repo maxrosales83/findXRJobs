@@ -1,6 +1,6 @@
-<nav class="panel">
-  <p class="text-uppercase has-text-white pv1 f6">filter by job type</p>
-
+<nav class="panel accordions" >
+   <a href="#collapsible-panel" data-action="collapse"><p class="text-uppercase has-text-white pv1 f6">filter by job type</p></a>
+<div class="accordion accordion-header toggle" id="collapsible-panel">
   <ul class="mb3 pa0">
     <li class="pv1">
       <%= link_to 'All', jobs_path, class: "button is-fullwidth is-light" %>
@@ -22,4 +22,5 @@
       <%= link_to 'Contract', jobs_path(job_type: "Contract"), class: "button is-fullwidth contractButton" %>
     </li>
   </ul>
+  </div>
 </nav>

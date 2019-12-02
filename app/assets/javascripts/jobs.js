@@ -38,7 +38,7 @@ document.addEventListener("turbolinks:load", function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-
+var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
