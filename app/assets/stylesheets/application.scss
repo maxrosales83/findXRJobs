@@ -102,12 +102,11 @@
 }
 
 .footer {
-  padding-top:10px !important;
-  padding-bottom:10px !important;
+  padding-top:20px !important;
+  padding-bottom:20px !important;
 }
 @media only screen and (max-width: 768px) {
 #footerImage {
-  
   margin-top:20px;
   width:55%;
 }
@@ -120,4 +119,13 @@
 .index-title a  {
   color:#00adee;
   
+}
+
+.footerTextLabels {
+  font-size:20px;
+  color:#00adee !important;
+}
+
+.footerTextLinks {
+  font-size:16px;
 }
