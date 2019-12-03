@@ -523,22 +523,48 @@
     
 
 
-    <footer class="footer">
-        <div class="container">
-        <%= link_to root_path do %>
-              <%= link_to image_tag("XR-Loaded-white.png", alt: "logo"), '/', class: 'appLogo' %>
-        <% end  %>
-           <div id="footerImage">
-            <%= image_tag 'https://xrloadedstorage.s3.amazonaws.com/weird-science-stars-anthony-michael-hall-kelly-le-brock-reveal-how-they-truly-feel-about-planned-reboot-post-2.jpg' %>
-           </div>
-           <p class="footerText" style="color:#fff;">
-                We're live and making adjustments as we go.</br> <a href="mailto:contact@xrloaded.com">Please let us know if you have any suggestions!</a>
+   <footer class="footer">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-two-thirds">
+            <%= link_to root_path do %>
+                  <%= link_to image_tag("XR-Loaded-white.png", alt: "logo"), '/', class: 'appLogo' %>
+            <% end  %>
+             <div id="footerImage">
+              <%= image_tag 'https://xrloadedstorage.s3.amazonaws.com/weird-science-stars-anthony-michael-hall-kelly-le-brock-reveal-how-they-truly-feel-about-planned-reboot-post-2.jpg' %>
+             </div>
+             <p class="footerText" style="color:#fff;">
+                  We're live and making adjustments as we go.</br>
+                  <a href="mailto:contact@xrloaded.com">Please let us know if you have any suggestions!</a>
              </p>
-        
-        <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us5.list-manage.com","uuid":"3054d90505d455689009ddaac","lid":"4e4a9edef7","uniqueMethods":true}) })</script>
-        
-        </div>
-    </footer>
+         </div>
+        <div class="column is-two-thirds">
+           <h1 class="footerTextLabels" style="color:#fff;">Seeking</h1>
+           <h2 class="footerTextLinks" style="color:#fff;">
+             <%= link_to "Find a Job", jobs_path, {:style=>'color:#FFFFFF;'} %>
+           </h2></br>
+           <h1 class="footerTextLabels" style="color:#fff;">Hiring</h1>
+             <h2 class="footerTextLinks" style="color:#fff;">
+                 <%= link_to "Post a Job", new_job_path, {:style=>'color:#FFFFFF;'} %>
+             </h2>
+             <h2 class="footerTextLinks" style="color:#fff;">
+                 <%= link_to "Sign In", new_user_session_path, {:style=>'color:#FFFFFF;'} %>
+             </h2>
+             <h2 class="footerTextLinks" style="color:#fff;">
+                 <%= link_to "Sign Up", new_user_registration_path, {:style=>'color:#FFFFFF;'} %>
+             </h2>
+         </div>
+         <div class="column is-two-thirds">
+            <h1 class="footerTextLabels" style="color:#fff;">Useful Links</h1>
+            <h2 class="footerTextLinks" style="color:#fff;">
+                 <%= link_to "Privacy Policy", privacy_path, {:style=>'color:#FFFFFF;'} %>
+             </h2>
+         </div>
+      </div>
+    </div>
+   
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us5.list-manage.com","uuid":"3054d90505d455689009ddaac","lid":"4e4a9edef7","uniqueMethods":true}) })</script> 
+  </footer>
     <%= javascript_include_tag 'application', "https://js.stripe.com/v2/", "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
 
     <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>

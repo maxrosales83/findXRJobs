@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'jobs#index'
   get '/info' => 'pages#info'
   get '/blog' => 'pages#blog'
+  get '/privacy' => 'pages#privacy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     
 end

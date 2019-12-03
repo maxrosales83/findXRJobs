@@ -146,12 +146,22 @@
            <h1 class="footerTextLabels" style="color:#fff;">Seeking</h1>
            <h2 class="footerTextLinks" style="color:#fff;">
              <%= link_to "Find a Job", jobs_path, {:style=>'color:#FFFFFF;'} %>
-           </h2>
-         </div>
-         <div class="column is-two-thirds">
+           </h2></br>
            <h1 class="footerTextLabels" style="color:#fff;">Hiring</h1>
              <h2 class="footerTextLinks" style="color:#fff;">
                  <%= link_to "Post a Job", new_job_path, {:style=>'color:#FFFFFF;'} %>
+             </h2>
+             <h2 class="footerTextLinks" style="color:#fff;">
+                 <%= link_to "Sign In", new_user_session_path, {:style=>'color:#FFFFFF;'} %>
+             </h2>
+             <h2 class="footerTextLinks" style="color:#fff;">
+                 <%= link_to "Sign Up", new_user_registration_path, {:style=>'color:#FFFFFF;'} %>
+             </h2>
+         </div>
+         <div class="column is-two-thirds">
+            <h1 class="footerTextLabels" style="color:#fff;">Useful Links</h1>
+            <h2 class="footerTextLinks" style="color:#fff;">
+                 <%= link_to "Privacy Policy", privacy_path, {:style=>'color:#FFFFFF;'} %>
              </h2>
          </div>
       </div>

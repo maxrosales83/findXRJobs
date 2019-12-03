@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= Rails.configuration.application_name %></title>
+    <%= csrf_meta_tags %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learn more about how we got started and what we aim to do here at XR Loaded." />
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= tag :meta, name: "stripe-public-key", content: Figaro.env.stripe_publishable_key %>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121634710-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-121634710-4');
+  </script>
+  </head>
+
+  <body class="<%= yield (:body_class) %>">
+    <% if flash[:notice] %>
+      <div class="notification is-success global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+    <div class="notification is-danger global-notification">
+      <p class="alert"><%= alert %></p>
+    </div>
+    <% end %>
+
+     <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <%= link_to root_path, class:"navbar-item" do %>
+          <%= link_to image_tag("XR-Loaded-Logo.png", alt: "logo"), '/', class: 'mt1 appLogo' %>
+         
+        <% end  %>
+         <img scr="/rails_project/job_board/app/assets/images/XR-Loaded-Logo.png"/>
+        <div class="navbar-burger burger" data-target="navbar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navbar" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+            <p class="control">
+              <%= link_to 'Post Job', new_job_path, class: "navbar-item button is-rounded" %>
+            </p>
+            <% if user_signed_in? %>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
+                <div class="navbar-dropdown is-right">
+                  <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
+                  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %>
+                </div>
+              </div>
+            <% else %>
+            <p class="control">
+              <%= link_to "Sign In", new_user_session_path, class:"navbar-item signUpSignInButton" %>
+            </p>
+            <p class="control">
+              <%= link_to "Sign up", new_user_registration_path, class:"navbar-item signUpSignInButton"%>
+            </p>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+<body>
+    <div class="columns is-vcentered">
+        <div class="column is-10" style="padding-left:60px;">
+ 
+    <strong>XR Loaded Privacy Policy</strong></br>
+ 
+This privacy policy applies only to this website. The website is operated by XR Loaded Ltd.
+'XR Loaded'; 'we'; 'us'; and 'our'; means XR Loaded Ltd.</br>
+  
+XR Loaded strives to ensure that the information that you submit to us remains private, and that it is used only for the purposes described below. We aim to provide a safe and secure experience for all of our users. We make every effort to comply with our obligations under the EU General Data Protection Regulation (GDPR). Additionally, we understand the importance of maintaining the confidentiality of your CV and other information stored about you while using the site.</br>
+ 
+ 
+Jobseeker Account and CV information</br>
+ 
+When you register to XR Loaded your details, including your CV, can be made available for searching, viewing over the Internet and downloading by any direct recruiter, employment consultant or other person or organization who requests CVs matching your profile to be sent to them. XR Loaded attempts to verify the identity and the nature of the business of such organizations however does not make any warranties as to their authenticity.</br>
+ 
+ 
+Your personal information</br>
+ 
+When you register with us as a jobseeker we will process your personal data on the basis set out in this policy, as it is in our legitimate interests to do so following your registration. We will collect personal information from you, such as your name, contact details, details of the kind of work you are looking for, the location where you want to work and your CV. We will use your personal data to manage your account and to email you about our services which includes job alerts and emails about courses that are relevant to your fields of interest. We may contact you regarding site changes or changes to the XR Loaded products or services that you use.</br>
+ 
+ 
+Disclosure of personal information</br>
+ 
+When you register, we store some information about you in your account, but it is protected by your password and may only be accessed by you. It does not form part of our candidate database and cannot be searched or accessed by XR Loaded customers. You can delete your account at any time. Your CV, unless you choose the option to 'hide', will be accessible to any XR Loaded customer. If you choose to hide your CV, all clients of XR Loaded will be unable to view or access it.
+ 
+If you choose to create a profile and upload a CV to our database, we rely on you to ensure that your details are kept up to date. You should update your CV at least every six months, particularly if your contact details have changed.</br>
+ 
+ 
+Please note that XR Loaded reserves the right to remove from our database, CVs which include any content that we consider to be illegal or offensive.</br>
+ 
+ 
+We may record and share aggregated information with our clients. Additionally, if you input your information on a co-branded registration page or job application page, eg a XR Loaded client-company registration page then the information that you give becomes the property of both XR Loaded and the client.</br>
+ 
+ 
+XR Loaded is not responsible for the information that the client receives.</br>
+ 
+ 
+XR Loaded will also use the aggregate data to identify employment trends across different industries, such as salary averages. This information will not be capable of being linked to any personally identifying information about users.</br>
+ 
+ 
+
+PLEASE NOTE:Your current employer may be a customer of XR Loaded, or a client of one of our customers. XR Loaded cannot restrict the customers who access profiles on our database and cannot be held responsible for any eventuality.</br>
+ 
+ 
+Information collection and use
+We routinely capture your IP address information to determine your location. This helps us work out whether you are visiting the site from within the US or rest of the world, and means we can show you content that's specific to your location. XR Loaded automatically receives and records information on our web server logs from your browser including your IP address. XR Loaded records IP addresses for anonymous statistical purposes, administration of our website and servers, and to improve our services.</br>
+ 
+ 
+An IP address, or 'internet protocol address', is a unique identifying number given to every device connected to the internet. Like a car license plate, an IP address is a special serial number used for identification.</br>
+ 
+ 
+Information may be gathered from your registration form and your use of our website through "cookies". The information gathered may be used by XR Loaded internally, for purposes relating to your use of the website and for marketing activities, and may be passed to carefully selected third parties to use for marketing activities. If you do not wish to receive marketing material from XR Loaded or from carefully selected third parties you should tick the appropriate box on the submission form. If you subsequently decide you no longer wish to receive direct marketing/information from XR Loaded or no longer wish us to pass your information to third parties you should notify us using the Contact page of our website or delete your CV.</br>
+ 
+ 
+XR Loaded may set and access cookies on your computer. You can choose whether or not to accept cookies, however, if you do not accept XR Loaded cookies, some of our services may not be available to you. This policy does not apply to companies that XR Loaded does not own or control, or to people that XR Loaded does not employ.</br>
+ 
+ 
+Other choice options for display: Users can also express their choices, through the following platforms: IAB opt-out platform, Network Advertising Initiative opt-out platform, Digital Advertising Alliance platform that provide options to express their choices for all companies that are registered in this platform.
+XR Loaded uses a specific cookie in order to facilitate the use of Google Universal Analytics for logged in Candidates or Recruiters (“Logged-In User”). If you are a Logged-In User, XR Loaded may use your Candidate or Recruiter user ID in combination with Google Universal Analytics and Google Analytics to track and analyse the pages of XR Loaded that you visit. We do this to better understand how you use XR Loaded, with the aim of improving XR Loaded for all users. We do not pass any Logged-In User personal identification information to Google Analytics.
+Learn more about privacy at Google or opt-out of this feature by installing the Google Analytics Opt-out Browser Add-on.
+ 
+Statistical information
+XR Loaded gathers general information about users, for example, what services users access the most and which areas of the XR Loaded site are most frequently visited, the number of CVs on the database, or the number of visitors to the site and for other lawful purposes. Such data is used in the aggregate to help us to understand how the XR Loaded site is used. We gather this information so that we can continue to improve and develop our services to benefit our users. We may make this aggregated information available to users of the XR Loaded site, to our clients, advertisers, suppliers and other reputable third parties. These statistics are anonymous and contain no personal information and cannot be used to gather such information.
+ 
+Security
+The site is protected against unauthorized access using the latest security devices and 'firewalls'.
+Other ways of ensuring your privacy & your data protection rights:
+These options are available when you log in to our website.
+You may access and amend your personal details at any time.
+You may 'hide your CV' from all clients of XR Loaded meaning that your CV and profile will not appear in any CV Searches. You are still able to apply for vacancies with your CV.
+ 
+You may unsubscribe from any employment or promotional information that we may send to you by in any of the following ways:
+•Using the unsubscribe function at the bottom of the email
+•Amending your account details by logging in to our website
+•Contacting us on the Contact page of our website.
+ 
+You can remove the information that XR Loaded stores about you, at any time, by logging in to your XR Loaded account and choosing to delete your account.
+If you have any questions about this policy or our use of your Personal Information please raise your query with our data officer. If you do not think we are handling your Personal Information adequately, you have the right to make a complaint to Information Commissioner's Office. 
+        </div>
+    </div>
+</body>
+
+ <footer class="footer">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-two-thirds">
+            <%= link_to root_path do %>
+                  <%= link_to image_tag("XR-Loaded-white.png", alt: "logo"), '/', class: 'appLogo' %>
+            <% end  %>
+             <div id="footerImage">
+              <%= image_tag 'https://xrloadedstorage.s3.amazonaws.com/weird-science-stars-anthony-michael-hall-kelly-le-brock-reveal-how-they-truly-feel-about-planned-reboot-post-2.jpg' %>
+             </div>
+             <p class="footerText" style="color:#fff;">
+                  We're live and making adjustments as we go.</br>
+                  <a href="mailto:contact@xrloaded.com">Please let us know if you have any suggestions!</a>
+             </p>
+         </div>
+        <div class="column is-two-thirds">
+           <h1 class="footerTextLabels" style="color:#fff;">Seeking</h1>
+           <h2 class="footerTextLinks" style="color:#fff;">
+             <%= link_to "Find a Job", jobs_path, {:style=>'color:#FFFFFF;'} %>
+           </h2></br>
+           <h1 class="footerTextLabels" style="color:#fff;">Hiring</h1>
+             <h2 class="footerTextLinks" style="color:#fff;">
+                 <%= link_to "Post a Job", new_job_path, {:style=>'color:#FFFFFF;'} %>
+             </h2>
+             <h2 class="footerTextLinks" style="color:#fff;">
+                 <%= link_to "Sign In", new_user_session_path, {:style=>'color:#FFFFFF;'} %>
+             </h2>
+             <h2 class="footerTextLinks" style="color:#fff;">
+                 <%= link_to "Sign Up", new_user_registration_path, {:style=>'color:#FFFFFF;'} %>
+             </h2>
+         </div>
+         <div class="column is-two-thirds">
+            <h1 class="footerTextLabels" style="color:#fff;">Useful Links</h1>
+            <h2 class="footerTextLinks" style="color:#fff;">
+                 <%= link_to "Privacy Policy", privacy_path, {:style=>'color:#FFFFFF;'} %>
+             </h2>
+         </div>
+      </div>
+    </div>
+   
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us5.list-manage.com","uuid":"3054d90505d455689009ddaac","lid":"4e4a9edef7","uniqueMethods":true}) })</script> 
+  </footer>
+    <%= javascript_include_tag 'application', "https://js.stripe.com/v2/", "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
+
+  </body>
+</html>
