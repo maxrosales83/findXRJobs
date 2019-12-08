@@ -67,6 +67,8 @@ gem 'fog-aws'
 gem 'bloggy'
 gem 'yajl-ruby'
 gem 'exception_handler', '~> 0.8.0.0'
+gem 'gibbon',  git: 'git://github.com/amro/gibbon.git'
+gem "mailchimp-api", "~> 2.0.4"
 
 group :development, :test do
   gem 'sqlite3'

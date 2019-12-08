@@ -1,7 +1,12 @@
  <div class="box cta">
       <p class="has-text-centered">
         <span class="tag is-primary">New</span> Our <%= link_to "Blog", blog_path %> is live!
-    </div>
+        </p>
+        <%= form_tag('/emailapi/subscribe', method: "post", id: "subscribe", remote: "true") do -%>
+   <%= email_field(:email, :address, {id: "email", placeholder: "email address"}) %>
+   <%= submit_tag("Sign me up!") %>
+<% end %>
+  </div>
 <div class="columns mt2" id="leftsideButtonsColumn">
 
   <div class="column is-2 bg-light">
