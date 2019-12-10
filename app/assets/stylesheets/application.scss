@@ -128,9 +128,79 @@
 
 .footerTextLinks {
   font-size:14px;
+  
 }
 
 #email {
-  
   padding:10px;
+  min-width:250px;
+  white-space: pre; 
+}
+
+#subscribe #submitButton {
+  background-color:#fbee53;
+  padding-top:10px;
+  padding-bottom:10px;
+  border-radius:90px;
+  padding-left:30px;
+  padding-right:30px;
+  font-weight:strong;
+  border-style:none;
+  font-size:16px !important;
+  margin-left:10px;
+}
+
+ #subscribe {
+  display:flex;
+  justify-content: center;
+  margin-top:15px;
+}
+@media only screen and (max-width: 520px) {
+    #subscribeForm {
+      display:none;
+    }
+    #subscribeForm2{
+      display:block;
+      margin-top:30px;
+    }
+    
+   #submitButtonMobile{
+      background-color:#fbee53;
+      padding-top:10px;
+      padding-bottom:10px;
+      border-radius:90px;
+      padding-left:30px;
+      padding-right:30px;
+      font-weight:strong;
+      border-style:none;
+      font-size:16px !important;
+      margin:0 auto;
+      display:block;
+      margin-top:0px;
+}
+     #subscribe {
+    
+      border-width:1px;
+      margin-bottom:-10px;
+    }
+}
+@media only screen and (min-width: 520px) {
+   #subscribeForm2 {
+      display:none;
+  }
+    #subscribeForm {
+      display:block;
+  }
+}
+
+#listCTA {
+  font-size:16px;
+  font-weight:bold;
+}
+
+.ctaButton {
+  background-color:#fff;
+  padding:10px;
+  width:120px;
+  text-align:center;
 }
