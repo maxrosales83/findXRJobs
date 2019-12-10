@@ -10,11 +10,10 @@ class EmailapiController < ApplicationController
       }
     )
 
-    
     respond_to do |format|
     format.html {redirect_to root_path}
     flash[:alert] = "Subscribed!"
-    flash.keep(:alert) # Keep flash notice around for the redirect.
+    #flash.keep(:alert) # Keep flash notice around for the redirect.
     format.js {render :js => "window.location.href='"+root_path+"'"} 
   end
  end

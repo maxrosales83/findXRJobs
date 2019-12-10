@@ -3,9 +3,9 @@
         <span class="tag is-primary">New</span> Our <%= link_to "Blog", blog_path %> is live!
         </p>
         <%= form_tag('/emailapi/subscribe', method: "post", id: "subscribe", remote: "true") do -%>
-   <%= email_field(:email, :address, {id: "email", placeholder: "email address"}) %>
-   <%= submit_tag("Sign me up!") %>
-<% end %>
+           <%= email_field(:email, :address, {id: "email", placeholder: "email address"}) %>
+           <%= submit_tag("Sign me up!") %>
+        <% end %>
   </div>
 <div class="columns mt2" id="leftsideButtonsColumn">
 
