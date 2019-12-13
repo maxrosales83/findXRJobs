@@ -139,7 +139,7 @@
 }
 
 #subscribe #submitButton {
-  background-color:#fbee53;
+  background-color::#5e5e5e;
   padding-top:10px;
   padding-bottom:10px;
   border-radius:90px;
@@ -150,8 +150,8 @@
   font-size:16px !important;
   margin-left:10px;
   cursor: pointer;
-  color:#00adee;
-  
+  color:#fff;
+
 }
 
 #subscribe #submitButton:hover {
@@ -200,7 +200,7 @@
       padding-top:20px;
 }
 
-.ctaButton, .ctaButton2 {
+.mailButton2 .ctaButton, .ctaButton2 {
   
   padding-bottom:35px;
   padding-top:10px;
@@ -256,4 +256,29 @@
  
   background-color:#f0fcff !important;
   color:#00adee;
+}
+
+
+.mailButton2 {
+  background-color:#5e5e5e;
+  color:#fff;
+  text-align:center;
+  border-style:none;
+  border-radius:90px;
+  margin:0 auto;
+  display:block;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.mailButton2:hover {
+  background-color:#f9f9f9;
+  color:#5e5e5e;
+  text-align:center;
+  border-style:none;
+  border-radius:90px;
+  margin:0 auto;
+  display:block;
+  padding-left:20px;
+  padding-right:20px;
 }
