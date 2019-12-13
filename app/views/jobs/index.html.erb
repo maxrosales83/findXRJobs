@@ -9,12 +9,13 @@
           </h2>
             <div class="columns">
               <div class="column is-one-quarter is-paddingless" id="desktopButtonMargin">
-                <a href="#viewjobs"><div class="ctaButton">View Jobs</div></a></br>
+                <a href="#viewjobs"><div class="ctaButton navbar-item button">View Jobs</div></a></br>
               </div>
                <div class="column is-one-quarter is-paddingless">
-                  <p class="ctaButton2" id="" onclick=”ga(‘send’, ‘event’, ‘Navbar’, ‘Click’, ‘Sign Up’, ‘10’);”>
-                  <%= link_to "Post a Job - $29", new_user_registration_path, class:""%>
-                  </p>
+                 <p class="control"><%= link_to "Post a Job - $29", new_user_registration_path, class:"navbar-item button ctaButton2"%></p>
+                  <!--<p class="ctaButton2" id="" onclick=”ga(‘send’, ‘event’, ‘Navbar’, ‘Click’, ‘Sign Up’, ‘10’);”>
+                  
+                  </p>-->
                </div>
             </div>
         </div>
@@ -23,9 +24,7 @@
      
     </section>
 <div class="box cta">
-     <!-- <p class="has-text-centered">
-        <span class="tag is-primary">New</span> Our <%= link_to "Blog", blog_path %> is live!
-      </p>-->
+     
        <div class="columns" id="subscribeForm">
           <h2 class="has-text-centered" id="listCTA">
             <span class="tag is-primary">New</span> Sign up for daily jobs!
@@ -47,8 +46,9 @@
           </div>
           <div class="column">
               <%= submit_tag("Send jobs to my inbox!", {id: "submitButtonMobile"}) %>
+              </div>
             <% end %>
-          </div>
+          
         </div>
   </div>
 <div class="columns mt2" id="leftsideButtonsColumn">

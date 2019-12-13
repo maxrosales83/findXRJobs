@@ -200,6 +200,12 @@
       padding-top:20px;
 }
 
+.ctaButton, .ctaButton2 {
+  
+  padding-bottom:35px;
+  padding-top:10px;
+}
+
     
 }
 @media only screen and (min-width: 520px) {
@@ -223,15 +229,16 @@
 
 .ctaButton {
   background-color:#00adee;
-  padding:10px;
- 
+
   text-align:center;
   color:#fff;
+  border-style:none;
 }
 
 .ctaButton:hover {
  
-  color:#000;
+  background-color:#f0fcff;
+  color:#00adee;
 }
 .box {
   box-shadow:none;
@@ -241,8 +248,12 @@
 
 .ctaButton2 {
   background-color:#fbee53;
-  padding:10px;
-  color:#fff;
+  color:#00adee;
   text-align:center;
-  
+  border-style:none;
+}
+.ctaButton2:hover {
+ 
+  background-color:#f0fcff !important;
+  color:#00adee;
 }
