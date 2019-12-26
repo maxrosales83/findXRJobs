@@ -8,9 +8,7 @@
             Augmented Reality, Mixed Reality, Virtual Reality. Loaded.
           </h2>
             <div class="columns">
-              <div class="column is-one-quarter is-paddingless" id="desktopButtonMargin">
-                <a href="#viewjobs"><div class="ctaButton navbar-item button">View Jobs</div></a></br>
-              </div>
+              
                <div class="column is-one-quarter is-paddingless">
                  <p class="control"><%= link_to "Post a Job - $29", new_user_registration_path, class:"navbar-item button ctaButton2"%></p>
                   <!--<p class="ctaButton2" id="" onclick=”ga(‘send’, ‘event’, ‘Navbar’, ‘Click’, ‘Sign Up’, ‘10’);”>
@@ -23,35 +21,25 @@
       </div>
      
     </section>
-<div class="box cta">
-     
-       <div class="columns" id="subscribeForm">
-          <h2 class="has-text-centered" id="listCTA">
-            <span class="tag is-primary">New</span> Sign up for daily jobs!
-           </h2>
-          <div class="column">
-            <%= form_tag('/emailapi/subscribe', method: "post", id: "subscribe", remote: "true") do -%>
-               <%= email_field(:email, :address, {id: "email", placeholder: "email address"}) %>
-               <%= submit_tag("Send jobs to my inbox!", {id: "submitButton"}) %>
-            <% end %>
+    <div class="columns is-mobile" style="background-color:#bcf5ff; margin-top:10px; justify-content: center;">
+          <div class="column is-half" style="">
+           <div class="field has-addons" style="justify-content: center;">
+               
+                  <div class="control" style="background-color:green; ">
+                      <%= form_tag job_search_path(@jobs),  method: :get do %>
+                      <%= text_field_tag :search, nil, placeholder: "Search Jobs", class: "input searchInput" %>
+                  </div>
+                  <div class="control">
+                      <%= submit_tag "Search", class:"button searchButton"%>
+                      <% end %>
+                  </div>
+               
+            </div>
           </div>
         </div>
-        <div class="columns" id="subscribeForm2">
-           <h2 class="has-text-centered" id="listCTA">
-            <span class="tag is-primary">New</span> Sign up for daily jobs!
-           </h2>
-          <div class="column">
-            <%= form_tag('/emailapi/subscribe', method: "post", id: "subscribe", remote: "true") do -%>
-              <%= email_field(:email, :address, {id: "email", placeholder: "email address"}) %>
-          </div>
-          <div class="column">
-              <%= submit_tag("Send jobs to my inbox!", class:"button mailButton2") %>
-              </div>
-            <% end %>
-          
-        </div>
-  </div>
-<div class="columns mt2" id="leftsideButtonsColumn">
+    
+    
+    <div class="columns mt2" id="leftsideButtonsColumn">
 
     <div class="column is-2 bg-light">
       <div class="pl3 pr1">

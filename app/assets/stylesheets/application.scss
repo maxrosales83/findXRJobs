@@ -72,6 +72,7 @@
 @media only screen and (max-width: 768px) {
 #leftsideButtonsColumn {
   margin-right:0;
+  display:none;
 }
 }
 @media only screen and (max-width: 768px) {
@@ -133,21 +134,23 @@
 }
 
 #email {
-  padding:10px;
-  min-width:250px;
-  white-space: pre; 
+  
+ padding:5px;
+ border-style:none;
+ border-bottom:solid;
+ border-bottom-color:#00adee;
+ border-bottom-width:2px;
 }
 
-#subscribe #submitButton {
-  background-color::#5e5e5e;
-  padding-top:10px;
-  padding-bottom:10px;
+#submitButton {
+  background-color:#00adee;
+ 
   border-radius:90px;
-  padding-left:30px;
-  padding-right:30px;
+  padding-left:15px;
+  padding-right:15px;
   font-weight:strong;
   border-style:none;
-  font-size:16px !important;
+  font-size:12px !important;
   margin-left:10px;
   cursor: pointer;
   color:#fff;
@@ -155,13 +158,22 @@
 }
 
 #subscribe #submitButton:hover {
-  color:#000;
+  background-color:#fbee53;
+  color:#00adee;
 }
 
  #subscribe {
   display:flex;
   justify-content: center;
-  margin-top:15px;
+  margin-top:0px;
+  margin-bottom:0xp;
+  padding-top:10px;
+}
+
+#subscribeForm {
+  margin-bottom:0px;
+
+  
 }
 @media only screen and (max-width: 520px) {
     #subscribeForm {
@@ -246,11 +258,16 @@
   background-color:#f0fcff;
 }
 
+#subscribeFormContainer{
+  padding:0px;
+}
+
 .ctaButton2 {
   background-color:#fbee53;
   color:#00adee;
   text-align:center;
   border-style:none;
+  margin-left:.7rem;
 }
 .ctaButton2:hover {
  
@@ -284,11 +301,28 @@
 }
 
 .searchButton {
-  float:left;
-  background-color:red;
+ 
+  background-color:#00adee;
+  border-style:none;
+  color:#fff;
+}
+
+.searchButton:hover {
+ 
+  background-color:#fff;
+  border-color:#00adee;
+  color:#00adee;
+  border-style:solid;
 }
 
 .searchInput {
   
-  display:inline-block;
+  border-style:none;
+}
+
+#topEMail {
+  padding-top:5px;
+  padding-bottom:5px;
+  margin-top:15px;
+ 
 }

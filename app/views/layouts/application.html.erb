@@ -64,21 +64,28 @@
       <p class="alert"><%= alert %></p>
     </div>
      <% end %>
-      <div class="columns is-centered">
-        <div class="column is-one-quarter">
-         <div class="field has-addons">
-            <div class="control">
-                <%= form_tag job_search_path(@jobs),  method: :get do %>
-                <%= text_field_tag :search, nil, placeholder: "Search Posts", class: "input searchInput" %>
+  
+       <div class="columns is-centered" id="topEMail">
+          <div class="columns is-one-quarter">
+             <div class="field has-addons" style="justify-content:center;">
+               <div class="control" >
+            <%= form_tag('/emailapi/subscribe', method: "post", id: "", remote: "true") do -%>
+               <%= email_field(:email, :address, {id: "email", placeholder: "email address",class: ""}) %>
+               </div>
+               <div class="control">
+               <%= submit_tag("Send jobs to my inbox!", {id: "submitButton", class:"button"}) %>
+            <% end %>
             </div>
-            <div class="control">
-                <%= submit_tag "Search", class:"button searchButton"%>
-                <% end %>
             </div>
           </div>
         </div>
-      </div>
-     <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+     
+
+       
+     
+     
+  <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <%= link_to root_path, class:"navbar-item" do %>
           <%= link_to image_tag("XR-Loaded-Logo.png", alt: "logo"), '/', class: 'mt1 appLogo' %>
