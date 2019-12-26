@@ -25,6 +25,14 @@ class JobsController < ApplicationController
   def edit
   end
 
+  def search
+      if params[:search].blank?
+        @jobs = Job.all.order("created_at desc")
+      else
+        @jobs = Job.search(params)
+      end
+  end
+  
   # POST /jobs
   # POST /jobs.json
   def create
