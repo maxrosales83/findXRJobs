@@ -1,0 +1,108 @@
+<section class="homepageBanner hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title is-1" style="color:#00adee;" id="bannerHeroText">
+            SEARCH RESULTS
+          </h1>
+         
+            <div class="columns">
+              <div class="column is-one-quarter is-paddingless" id="desktopButtonMargin">
+                <a href="#viewjobs"><div class="ctaButton navbar-item button">View All Jobs</div></a></br>
+              </div>
+               <div class="column is-one-quarter is-paddingless">
+                 <p class="control"><%= link_to "Post a Job - $29", new_user_registration_path, class:"navbar-item button ctaButton2"%></p>
+                  <!--<p class="ctaButton2" id="" onclick=”ga(‘send’, ‘event’, ‘Navbar’, ‘Click’, ‘Sign Up’, ‘10’);”>
+                  
+                  </p>-->
+               </div>
+            </div>
+        </div>
+        
+      </div>
+     
+    </section>
+
+<div class="columns mt2" id="leftsideButtonsColumn">
+
+    <div class="column is-2 bg-light">
+      <div class="pl3 pr1">
+        <%= render 'panel' %>
+      </div>
+    </div>
+    <div id="viewjobs">
+      <div id="noShowOnMobile"class="column is-9 pl6">
+        <% @jobs.each do |job| %>
+        <div class="columns border-bottom pt4">
+          <div class="column is-1">
+            <% if !job.avatar.file.nil? %>
+              <%= link_to image_tag(job.avatar_url(:thumb), alt: job.job_author, width: 100, height: 100), job.url %>
+            <% end %>
+          </div>
+          <div class="column is-8">
+            <h3 class="title is-4 index-title"><%= link_to job.title, job %></h3>
+              <ul>
+                <li><%= link_to job.job_author, job.url %></li>
+              </ul>
+            <div class="pv2 f6">
+              <%= sanitize(job.description.truncate(200, separator: '</p>')) %>
+            </div>
+    
+            <% if current_user.try(:admin) || job_author(job) %>
+              <ul class="pv3">
+                <li class="inline-block f6">Admin controls: </li>
+                <li class="inline-block">
+                  <%= link_to 'View', job, class: 'button is-small is-link is-outlined' %></li>
+                <li class="inline-block">
+                  <%= link_to 'Edit', edit_job_path(job), class: 'button is-small is-link is-outlined' %></li>
+                <li class="inline-block">
+                  <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %></li>
+              </ul>
+            <% end %>
+    
+            </div>
+            <div class="column has-text-right">
+              <%= job_type(job.job_type) %>
+              <p class="pt2 f6"><%= job.location %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div id="ShowOnMobile"class="column is-9 pl4">
+        <% @jobs.each do |job| %>
+        <div class="columns border-bottom pt4">
+          <div class="column is-1">
+            <% if !job.avatar.file.nil? %>
+              <%= link_to image_tag(job.avatar_url(:thumb), alt: job.job_author, width: 100, height: 100), job.url %>
+            <% end %>
+          </div>
+          <div class="column is-8">
+            <h3 class="title is-4 index-title"><%= link_to job.title, job %></h3>
+              <ul>
+                <li><%= link_to job.job_author, job.url %></li>
+              </ul>
+            <div class="pv2 f6">
+              <%= sanitize(job.description.truncate(200, separator: '</p>')) %>
+            </div>
+    
+            <% if current_user.try(:admin) || job_author(job) %>
+              <ul class="pv3">
+                <li class="inline-block f6">Admin controls: </li>
+                <li class="inline-block">
+                  <%= link_to 'View', job, class: 'button is-small is-link is-outlined' %></li>
+                <li class="inline-block">
+                  <%= link_to 'Edit', edit_job_path(job), class: 'button is-small is-link is-outlined' %></li>
+                <li class="inline-block">
+                  <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %></li>
+              </ul>
+            <% end %>
+    
+            </div>
+            <div class="column has-text-right">
+              <%= job_type(job.job_type) %>
+              <p class="pt2 f6"><%= job.location %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>
