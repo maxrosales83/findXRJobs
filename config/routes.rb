@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'jobs#index'
   get '/info' => 'pages#info'
-  get '/blog' => 'pages#blog'
+ #get '/blog' => 'pages#blog'
   get '/privacy' => 'pages#privacy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/emailsignup'  => 'emailapi#index'
   post '/emailapi/subscribe'=> 'emailapi#subscribe'
+  get '/blog', to: redirect("https:/www.xrloaded.com/blog/", status: 301)
   
     
 end
