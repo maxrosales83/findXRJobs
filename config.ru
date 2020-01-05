@@ -5,5 +5,5 @@ require_relative 'config/environment'
 run Rails.application
 
 use Rack::ReverseProxy do
-reverse_proxy(/^\/blog(\/.*)$/, 'https://blog.xrloaded.com$1', opts = { preserve_host: true })
+
 end
