@@ -5,6 +5,10 @@
 @import "jobs";
 @import "stripe";
 
+body {
+  overflow-x: hidden;
+}
+
 .notification {
   border-radius: 0;
 }
@@ -208,7 +212,7 @@
       margin-bottom:-10px;
     }
     #bannerHeroText {
-      font-size: 2rem;
+      font-size: 3rem;
     }
     
     .homepageBanner {
