@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   resources :jobs do
     get :search #creates new path for search feature
   end
+  
+  resources :articles
   devise_for :users
   root to: 'jobs#index'
   get '/info' => 'pages#info'
-  get '/blog' => 'pages#blog'
+  get '/blog' => 'articles#index'
   get '/privacy' => 'pages#privacy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/emailsignup'  => 'emailapi#index'

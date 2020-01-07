@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191122015306) do
+ActiveRecord::Schema.define(version: 20200106220241) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.integer "visit_id"
@@ -51,6 +51,11 @@ ActiveRecord::Schema.define(version: 20191122015306) do
     t.datetime "started_at"
     t.index ["user_id"], name: "index_ahoy_visits_on_user_id"
     t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
   end
 
   create_table "jobs", force: :cascade do |t|
