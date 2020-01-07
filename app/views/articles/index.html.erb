@@ -1,25 +1,33 @@
-<h1>Listing all articles</h1>
-<% if current_user.try(:admin) %>
-   <p>
-   <%= link_to "Create new article", new_article_path %>
-   </p>
-   <%end %>
-  <table>
-   <tr>
-    <th>Title</th>
-    <th>Description</th>
-   </tr>
+<section class="hero mt-4" style="background-color:#051419; margin-top:20px;">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-light	">
+        Primary title
+      </h1>
+      <h2 class="subtitle">
+        Primary subtitle
+      </h2>
+    </div>
+  </div>
+</section>
   
-   <% @articles.each do |article| %>
-   
-   <tr>
-   
-     <td><%= link_to article.title, article_path(article) %></td>
-      <td><%= link_to article.description, article_path(article) %></td>
-      
-      <td><%= link_to "Read More", article_path(article) %> </td>
-    </tr>
-  
-    
- <% end %>
- </table>
+<% @articles.each do |article| %>
+ <div class="column is-9 is-centered" style="background-color:#051419; padding-top:20px; padding-left:25px; padding-right:25px;">
+					<div class="box content" style="background-color:#051419; box-shadow: 9px 9px 16px rgb(5,20,25,0.6), -9px -9px 16px  rgba(17,38,43, 0.5);">
+						<article class="post mt-4" >
+							<p class="postTitle"><%= link_to article.title, article_path(article) %></p>
+							<div class="media">
+								
+								<div class="media-content">
+									<div class="content">
+									<%= link_to article.description, article_path(article) %>
+									</div>
+								</div>
+								<div class="media-right">
+									<span class="has-text-grey-light"><%= link_to "Read More", article_path(article) %></span>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+<% end %>
