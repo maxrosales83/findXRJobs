@@ -2,13 +2,15 @@ class ArticlesController < ApplicationController
     before_action :set_article, only: [:edit, :update, :show, :destroy]
     before_action :authenticate_user!, except: [:index]
   
+   
     
     def new
         @article = Article.new
     end
     
     def index
-        @articles = Article.all.order("id desc")
+        @articles = Article.limit(3).order("id desc")
+        @secondrow = Article.limit(3).offset(3).order("id desc")
     end
     
     def create

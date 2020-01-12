@@ -1,43 +1,3 @@
-<section class="hero mt-4" style="background-color:#051419; margin-top:20px;">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title has-text-light	">
-        Primary titles
-      </h1>
-      <h2 class="subtitle">
-        Primary subtitle
-      </h2>
-    </div>
-  </div>
-</section>
-  
-<% @articles.each do |article| %>
-
-<section class="container" style="background-color:#051419; margin:0;">
-	<div class="columns">
-		<div class="column is-9" style="background-color:#051419; padding-left:25px; padding-right:25px;">
-					<div class="box content" style="background-color:#051419; box-shadow: 9px 9px 16px rgb(5,20,25,0.6), -9px -9px 16px  rgba(17,38,43, 0.5);">
-						<article class="post mt-4" >
-							<p class="postTitle"><%= link_to article.title, article_path(article) %></p>
-							<div class="media">
-								
-								<div class="media-content">
-									<div class="content">
-									<%= link_to article.description, article_path(article) %>
-									</div>
-								</div>
-								<div class="media-right">
-									<span class="has-text-grey-light"><%= link_to "Read More", article_path(article) %></span>
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
-	
-	</div>
-</section>
-
-<% end %>
 
 <!-- page header (title, etc) -->
     <div class="main-header">
@@ -103,70 +63,145 @@
 
 
     	<!-- page content -->
+			
     	<div class="main-content">
     		
 	      	<div class="container">
+	      			<!-- start of posts -->
 	      		
-				<!-- start of posts -->
 				<div class="columns has-text-centered">
 			  	<!-- start of post -->
-			  	<% @articles.each do |article| %>
-			  	<div class="column is-4">
-			  		
-				    <div class="card">
-				      <!-- image for post -->
-				      <div class="card-image">
-					<figure class="image is-4by3">
-						<%= link_to article.title, article_path(article) %>
+			  		<% @articles.each do |article| %>
+			  		<div class="column is-4" >
+			 	
+					    <div class="card">
+					    
+					      <!-- image for post -->
+					      <div class="card-image">
+						<figure class="image is-4by3">
+							<%= link_to article.title, article_path(article) %>
+							
+						  <img src="http://placehold.it/700x500" alt="Image">
+						</figure>
+					      </div>
+					      <!-- end of image for post -->
+					      
+					      <!-- post header -->
+					      <div class="card-content-header">
+						<h4 class="title is-4"><a href="post.html"><%= link_to article.title, article_path(article) %></a></h4>
+						<%= link_to article.description, article_path(article) %>
+					      </div>
+					      <!-- end of post header -->
+					      
+					      <!-- post content -->
+					      <div class="card-content">
+							<div class="content">
+							  <div class="nav-center">
+							    <a class="nav-item" href="">
+							      <span class="icon">
+								<i class="fa fa-twitter"></i>
+							      </span>
+							    </a>
+							    <a class="nav-item" href="">
+							      <span class="icon">
+								<i class="fa fa-facebook"></i>
+							      </span>
+							    </a>
+							    <a class="nav-item" href="">
+							      <span class="icon">
+								<i class="fa fa-instagram"></i>
+							      </span>
+							    </a>
+							    
+							  </div>
+							</div>
+							<!-- end of post content -->
+				
+						<!-- post footer -->
 						
-					  <img src="http://placehold.it/700x500" alt="Image">
-					</figure>
-				      </div>
-				      <!-- end of image for post -->
-				      
-				      <!-- post header -->
-				      <div class="card-content-header">
-					<h4 class="title is-4"><a href="post.html"><%= link_to article.title, article_path(article) %></a></h4>
-					<%= link_to article.description, article_path(article) %>
-				      </div>
-				      <!-- end of post header -->
-				      
-				      <!-- post content -->
-				      <div class="card-content">
-						<div class="content">
-						  <div class="nav-center">
-						    <a class="nav-item" href="">
-						      <span class="icon">
-							<i class="fa fa-twitter"></i>
-						      </span>
-						    </a>
-						    <a class="nav-item" href="">
-						      <span class="icon">
-							<i class="fa fa-facebook"></i>
-						      </span>
-						    </a>
-						    <a class="nav-item" href="">
-						      <span class="icon">
-							<i class="fa fa-instagram"></i>
-						      </span>
-						    </a>
-						    
-						  </div>
-						</div>
-						<!-- end of post content -->
-			
-					<!-- post footer -->
+						<!-- end of post footer -->
+					      </div>
+					       
+					    </div>
 					
-					<!-- end of post footer -->
-				      </div>
-				    </div>
-			  	</div><% end %>
+					    
+				 
+			  		</div>
+			  	    <% end %> 
+			  	   
+			  	
 			  	<!-- end of post -->
-			  	  
-			</div>
-		<!-- end of posts -->	
-      	</div>
-    
+			  	</div>
+			  	<div class="columns has-text-centered">
+			  	<!-- start of post -->
+			  		<% @secondrow.each do |article| %>
+			  		<div class="column is-4" >
+			 	
+					    <div class="card">
+					    
+					      <!-- image for post -->
+					      <div class="card-image">
+						<figure class="image is-4by3">
+							<%= link_to article.title, article_path(article) %>
+							
+						  <img src="http://placehold.it/700x500" alt="Image">
+						</figure>
+					      </div>
+					      <!-- end of image for post -->
+					      
+					      <!-- post header -->
+					      <div class="card-content-header">
+						<h4 class="title is-4"><a href="post.html"><%= link_to article.title, article_path(article) %></a></h4>
+						<%= link_to article.description, article_path(article) %>
+					      </div>
+					      <!-- end of post header -->
+					      
+					      <!-- post content -->
+					      <div class="card-content">
+							<div class="content">
+							  <div class="nav-center">
+							    <a class="nav-item" href="">
+							      <span class="icon">
+								<i class="fa fa-twitter"></i>
+							      </span>
+							    </a>
+							    <a class="nav-item" href="">
+							      <span class="icon">
+								<i class="fa fa-facebook"></i>
+							      </span>
+							    </a>
+							    <a class="nav-item" href="">
+							      <span class="icon">
+								<i class="fa fa-instagram"></i>
+							      </span>
+							    </a>
+							    
+							  </div>
+							</div>
+							<!-- end of post content -->
+				
+						<!-- post footer -->
+						
+						<!-- end of post footer -->
+					      </div>
+					       
+					    </div>
+					
+					    
+				 
+			  		</div>
+			  	    <% end %> 
+			  	   
+			  	
+			  	<!-- end of post -->
+			  	</div>
+			  
+			  
+			  	
+				<!-- end of posts -->	
+      		</div>
+      		
+    	</div>
       <!-- pagination -->
       <div class="pagination-style-custom">
 	<div class="container has-text-right">
