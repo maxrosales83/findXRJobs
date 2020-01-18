@@ -6,50 +6,20 @@
 	  <div class="container">
 	    <div class="has-text-centered">
 	      <!-- header && subheader -->
-	      <h1 class="title is-1 is-spaced">BULMA DARKS</h1>
-	      <h4 class="subtitle is-4">bulma dark template</h4>
+	      <h1 class="title is-1 is-spaced">XR Loaded Blog</h1>
+
 	      <!-- end of header && subheader -->
 	      
 	      <!-- header nav content -->
 	      <div class="nav-center">
-		<a class="nav-item" href="">
+		<a class="nav-item" href="https://www.facebook.com/xrloaded/">
 		  <span class="icon">
 		    <i class="fa fa-facebook"></i>
 		  </span>
 		</a>
-		<a class="nav-item" href="">
-		  <span class="icon">
-		    <i class="fa fa-twitter"></i>
-		  </span>
-		</a>
-		<a class="nav-item" href="">
-		  <span class="icon">
-		    <i class="fa fa-pinterest"></i>
-		  </span>
-		</a>
-		<a class="nav-item" href="">
-		  <span class="icon">
-		    <i class="fa fa-google-plus"></i>
-		  </span>
-		</a>
-		<a class="nav-item" href="">
+		<a class="nav-item" href="https://www.instagram.com/xrloadedapp/">
 		  <span class="icon">
 		    <i class="fa fa-instagram"></i>
-		  </span>
-		</a>
-		<a class="nav-item" href="">
-		  <span class="icon">
-		    <i class="fa fa-youtube"></i>
-		  </span>
-		</a>
-		<a class="nav-item" href="">
-		  <span class="icon">
-		    <i class="fa fa-linkedin"></i>
-		  </span>
-		</a>
-		<a class="nav-item" href="">
-		  <span class="icon">
-		    <i class="fa fa-rss"></i>
 		  </span>
 		</a>
 	      </div>
@@ -79,9 +49,13 @@
 					      <!-- image for post -->
 					      <div class="card-image">
 						<figure class="image is-4by3">
+							 
 							<%= link_to article.title, article_path(article) %>
 							
-						  <img src="http://placehold.it/700x500" alt="Image">
+						 	<% if !article.blogimage.file.nil? %>
+              					<%= link_to image_tag(article.blogimage_url(:thumb),:class => "image is-5by3"), article_path(article) %>
+            				<% end %>
+            				
 						</figure>
 					      </div>
 					      <!-- end of image for post -->

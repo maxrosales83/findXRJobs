@@ -6,7 +6,8 @@
  <% end %>
  </ul>
 <% end %>
-<%= form_for @article do |f| %>
+<%= simple_form_for @article, html: { multipart: true } do |f| %>
+
  <p>
   <%= f.label :title %><br>
   <%= f.text_field :title %>
@@ -15,6 +16,13 @@
   <%= f.label :description %><br>
   <%= f.text_area :description %>
  </p>
+<label class="file-label">
+              <%= f.input :blogimage, as: :file, required: false, input_html: { class:"file-input job-avatar" }, label: false, wrapper: false %>
+                <span class="file-cta">
+                  <span class="file-icon"><i class="fa fa-upload"></i></span>
+                  <span class="file-label">Choose a file…</span>
+                </span>
+            </label>
  <p>
   <%= f.submit %>
  </p>

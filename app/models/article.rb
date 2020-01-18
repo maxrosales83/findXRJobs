@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
-  mount_uploader :avatar, AvatarUploader
+  belongs_to :user , :optional => true
+  mount_uploader :blogimage, AvatarUploader
     def admin?
       admin
     end

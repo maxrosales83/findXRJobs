@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200106220241) do
+ActiveRecord::Schema.define(version: 20200112211550) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.integer "visit_id"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20200106220241) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.string "blogimage"
   end
 
   create_table "jobs", force: :cascade do |t|
