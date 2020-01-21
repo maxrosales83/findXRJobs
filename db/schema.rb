@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20200118114634) do
     t.string "title"
     t.text "description"
     t.string "blogimage"
-    t.datetime "created_at", null: false
+    t.datetime "created_at"
   end
 
   create_table "jobs", force: :cascade do |t|
