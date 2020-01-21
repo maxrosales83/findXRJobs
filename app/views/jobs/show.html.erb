@@ -16,7 +16,7 @@
     </ul>
 
     <div class="content text-serif f4">
-      <%= @job.description.html_safe %>
+      <%= @job.description %>
     </div>
 
     <%= link_to 'Apply to this job', @job.apply_url, class:"button is-rounded is-large is-fullwidth is-link" %>
