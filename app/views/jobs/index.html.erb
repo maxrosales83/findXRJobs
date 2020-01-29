@@ -49,7 +49,9 @@
     <div id="viewjobs">
       <div id="noShowOnMobile"class="column is-9 pl6">
         <% @jobs.each do |job| %>
+        
         <div class="columns border-bottom pt4">
+          <%= link_to job do %>
           <div class="column is-1">
           <% if !job.avatar.file.nil? %>
               <%= link_to image_tag(job.avatar_url(:thumb), alt: job.job_author, width: 100, height: 100), job %>
@@ -81,7 +83,9 @@
               <%= job_type(job.job_type) %>
               <p class="pt2 f6"><%= job.location %></p>
             </div>
+            <% end %>
           </div>
+          
         <% end %>
       </div>
       <div id="ShowOnMobile"class="column is-9 pl4">
