@@ -73,7 +73,7 @@ gem "mailchimp-api", "~> 2.0.4"
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'better_errors', '~> 2.4'
+  gem 'better_errors', '~> 2.9'
   gem 'guard', '~> 2.14'
   gem 'guard-livereload', '~> 2.5'
 end
